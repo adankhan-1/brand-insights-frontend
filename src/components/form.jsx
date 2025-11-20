@@ -9,8 +9,8 @@ const InsightForm = () => {
   } = useForm();
   const [submittedData, setSubmittedData] = useState(null);
   const [submitError, setSubmitError] = useState(null);
-  const [showMetrics, setShowMetrics] = useState(false); // New state for metrics visibility
-  const [metrics, setMetrics] = useState(null); // To store metrics from backend response
+  const [showMetrics, setShowMetrics] = useState(false);
+  const [metrics, setMetrics] = useState(null);
 
   const onSubmit = async (data) => {
     setSubmitError(null);
@@ -36,7 +36,7 @@ const InsightForm = () => {
 
       const result = await response.json();
       setSubmittedData(payload);
-      setMetrics(result.visibilityMetrics); // Save metrics from response
+      setMetrics(result.visibilityMetrics);
     } catch (error) {
       setSubmitError(error.message);
     }
